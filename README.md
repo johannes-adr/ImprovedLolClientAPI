@@ -5,18 +5,18 @@ added some useful methods like a champion api for ddragon and much more
 ## Download
 with maven using repository:
 
-```XML
+``` XML
 <repositories>
   <repository>
-	  <id>jitpack.io</id>
-		<url>https://jitpack.io</url>
-	</repository>
+	<id>jitpack.io</id>
+	<url>https://jitpack.io</url>
+  </repository>
 </repositories>
 ```
 
 and dependency:
 
-```XML
+``` XML
 <dependency>
 	<groupId>com.github.johannes-adr</groupId>
 	<artifactId>ImprovedLolClientAPI</artifactId>
