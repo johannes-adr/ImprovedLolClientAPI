@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Stirantepluspus</groupId>
+	<artifactId>Stiranteplusplus</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Jadr</name>
+
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20210307</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.11.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.stirante</groupId>
+			<artifactId>lol-client-java-api</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.github.johannes-adr</groupId>
+			<artifactId>LeagueOfGraphsGetter</artifactId>
+			<version>6fa55174ce</version>
+		</dependency>
+
+
+	</dependencies>
+
+</project>
