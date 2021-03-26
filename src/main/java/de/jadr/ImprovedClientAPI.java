@@ -13,6 +13,7 @@ import de.jadr.loggetter.LOGChampion;
 import de.jadr.loggetter.LOGChampion.Rank;
 import generated.LolGameflowGameflowPhase;
 import generated.LolGameflowGameflowSession;
+import generated.LolPerksPerkPageResource;
 
 public class ImprovedClientAPI extends ClientApi {
 
@@ -43,6 +44,31 @@ public class ImprovedClientAPI extends ClientApi {
 		
 		public LOGChampion getLeagueOfGraphsChampionDetails(String championName, Rank k) throws IOException {
 			return new LOGChampion(championName, k);
+		}
+		
+		public ApiResponse<LolPerksPerkPageResource[]> getRunePages() throws IOException {		
+			return executeGet("/lol-perks/v1/pages", LolPerksPerkPageResource[].class);
+		}
+		
+		public ApiResponse<Void> setRunePage(LolPerksPerkPageResource r) throws IOException {
+			ApiResponse<LolPerksPerkPageResource[]> rp = getRunePages();
+			if(!rp.isOk()) {
+				return null;
+			}
+			if(rp.getResponseObject()[0].isDeletable) {
+				deleteRune(rp.getResponseObject()[0]);
+			}
+			return executePost("/lol-perks/v1/pages/", r);
+		}
+		
+		public ApiResponse<Void> deleteRune(LolPerksPerkPageResource r) {
+			try {
+				ApiResponse<Void> res = executeDelete("/lol-perks/v1/pages/"+r.id);
+				return res;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return null;
 		}
 
 		public LolGameflowGameflowPhase getCurrentGamePhase() {
